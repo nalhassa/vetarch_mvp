@@ -59,6 +59,14 @@ class OnlinePricingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_medication
+    @online_pricing = OnlinePricing.find(params.fetch("id_to_remove"))
+
+    @online_pricing.destroy
+
+    redirect_to("/medications/#{@online_pricing.medication_id}", notice: "OnlinePricing deleted successfully.")
+  end
+
   def destroy_row
     @online_pricing = OnlinePricing.find(params.fetch("id_to_remove"))
 

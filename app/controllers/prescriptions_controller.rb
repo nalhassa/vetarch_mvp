@@ -75,6 +75,54 @@ class PrescriptionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/users/#{@prescription.user_id}", notice: "Prescription deleted successfully.")
+  end
+
+  def destroy_row_from_veterinarian
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/veterinarians/#{@prescription.veterinarian_id}", notice: "Prescription deleted successfully.")
+  end
+
+  def destroy_row_from_client
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/clients/#{@prescription.client_id}", notice: "Prescription deleted successfully.")
+  end
+
+  def destroy_row_from_pet
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/pets/#{@prescription.pet_id}", notice: "Prescription deleted successfully.")
+  end
+
+  def destroy_row_from_medication
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/medications/#{@prescription.medication_id}", notice: "Prescription deleted successfully.")
+  end
+
+  def destroy_row_from_denial_code
+    @prescription = Prescription.find(params.fetch("id_to_remove"))
+
+    @prescription.destroy
+
+    redirect_to("/denial_codes/#{@prescription.denial_code_id}", notice: "Prescription deleted successfully.")
+  end
+
   def destroy_row
     @prescription = Prescription.find(params.fetch("id_to_remove"))
 

@@ -56,6 +56,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_online_pricing/:id_to_remove", { :controller => "online_pricings", :action => "destroy_row" })
+  get("/delete_online_pricing_from_medication/:id_to_remove", { :controller => "online_pricings", :action => "destroy_row_from_medication" })
 
   #------------------------------
 
@@ -94,6 +95,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_pet/:id_to_remove", { :controller => "pets", :action => "destroy_row" })
+  get("/delete_pet_from_client/:id_to_remove", { :controller => "pets", :action => "destroy_row_from_client" })
 
   #------------------------------
 
@@ -113,6 +115,12 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_prescription/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row" })
+  get("/delete_prescription_from_denial_code/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_denial_code" })
+  get("/delete_prescription_from_medication/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_medication" })
+  get("/delete_prescription_from_pet/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_pet" })
+  get("/delete_prescription_from_client/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_client" })
+  get("/delete_prescription_from_veterinarian/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_veterinarian" })
+  get("/delete_prescription_from_user/:id_to_remove", { :controller => "prescriptions", :action => "destroy_row_from_user" })
 
   #------------------------------
 

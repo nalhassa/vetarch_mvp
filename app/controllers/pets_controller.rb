@@ -59,6 +59,14 @@ class PetsController < ApplicationController
     end
   end
 
+  def destroy_row_from_client
+    @pet = Pet.find(params.fetch("id_to_remove"))
+
+    @pet.destroy
+
+    redirect_to("/clients/#{@pet.client_id}", notice: "Pet deleted successfully.")
+  end
+
   def destroy_row
     @pet = Pet.find(params.fetch("id_to_remove"))
 
