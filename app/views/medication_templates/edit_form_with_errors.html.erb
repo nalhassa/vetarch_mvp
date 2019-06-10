@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @medication.errors.any? %>
+  <% @medication.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit medication #<%= @medication.id %>
+</h1>
+
+<hr>
+
+<!-- Form medication start -->
+<form action="/update_medication/<%= @medication.id %>" method="post">
+<!-- Form medication end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @medication.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <label for="category">
+      Category
+    </label>
+
+    <!-- Input for category start -->
+    <input type="text" id="category" name="category" class="form-control" value="<%= @medication.category %>">
+    <!-- Input for category end -->
+  </div>
+  <!-- Label and input for category end -->
+
+  <!-- Label and input for amount_mg start -->
+  <div class="form-group">
+    <label for="amount_mg">
+      Amount mg
+    </label>
+
+    <!-- Input for amount_mg start -->
+    <input type="text" id="amount_mg" name="amount_mg" class="form-control" value="<%= @medication.amount_mg %>">
+    <!-- Input for amount_mg end -->
+  </div>
+  <!-- Label and input for amount_mg end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update medication
+  </button>
+</form>
+
+<hr>
+
+<a href="/medications">
+  Go back
+</a>
