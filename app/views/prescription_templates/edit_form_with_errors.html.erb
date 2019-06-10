@@ -1,0 +1,184 @@
+<!-- Validation failure messages -->
+<% if @prescription.errors.any? %>
+  <% @prescription.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit prescription #<%= @prescription.id %>
+</h1>
+
+<hr>
+
+<!-- Form prescription start -->
+<form action="/update_prescription/<%= @prescription.id %>" method="post">
+<!-- Form prescription end -->
+
+  <!-- Label and input for client_id start -->
+  <div class="form-group">
+    <label for="client_id">
+      Client
+    </label>
+
+    <!-- Input for client_id start -->
+    <input type="text" id="client_id" name="client_id" class="form-control" value="<%= @prescription.client_id %>">
+    <!-- Input for client_id end -->
+  </div>
+  <!-- Label and input for client_id end -->
+
+  <!-- Label and input for medication_id start -->
+  <div class="form-group">
+    <label for="medication_id">
+      Medication
+    </label>
+
+    <!-- Input for medication_id start -->
+    <input type="text" id="medication_id" name="medication_id" class="form-control" value="<%= @prescription.medication_id %>">
+    <!-- Input for medication_id end -->
+  </div>
+  <!-- Label and input for medication_id end -->
+
+  <!-- Label and input for pet_id start -->
+  <div class="form-group">
+    <label for="pet_id">
+      Pet
+    </label>
+
+    <!-- Input for pet_id start -->
+    <input type="text" id="pet_id" name="pet_id" class="form-control" value="<%= @prescription.pet_id %>">
+    <!-- Input for pet_id end -->
+  </div>
+  <!-- Label and input for pet_id end -->
+
+  <!-- Label and input for quantity start -->
+  <div class="form-group">
+    <label for="quantity">
+      Quantity
+    </label>
+
+    <!-- Input for quantity start -->
+    <input type="text" id="quantity" name="quantity" class="form-control" value="<%= @prescription.quantity %>">
+    <!-- Input for quantity end -->
+  </div>
+  <!-- Label and input for quantity end -->
+
+  <!-- Label and input for package_size start -->
+  <div class="form-group">
+    <label for="package_size">
+      Package size
+    </label>
+
+    <!-- Input for package_size start -->
+    <input type="text" id="package_size" name="package_size" class="form-control" value="<%= @prescription.package_size %>">
+    <!-- Input for package_size end -->
+  </div>
+  <!-- Label and input for package_size end -->
+
+  <!-- Label and input for dosage start -->
+  <div class="form-group">
+    <label for="dosage">
+      Dosage
+    </label>
+
+    <!-- Input for dosage start -->
+    <input type="text" id="dosage" name="dosage" class="form-control" value="<%= @prescription.dosage %>">
+    <!-- Input for dosage end -->
+  </div>
+  <!-- Label and input for dosage end -->
+
+  <!-- Label and input for dosage_time_units start -->
+  <div class="form-group">
+    <label for="dosage_time_units">
+      Dosage time units
+    </label>
+
+    <!-- Input for dosage_time_units start -->
+    <input type="text" id="dosage_time_units" name="dosage_time_units" class="form-control" value="<%= @prescription.dosage_time_units %>">
+    <!-- Input for dosage_time_units end -->
+  </div>
+  <!-- Label and input for dosage_time_units end -->
+
+  <!-- Label and input for refills start -->
+  <div class="form-group">
+    <label for="refills">
+      Refills
+    </label>
+
+    <!-- Input for refills start -->
+    <input type="text" id="refills" name="refills" class="form-control" value="<%= @prescription.refills %>">
+    <!-- Input for refills end -->
+  </div>
+  <!-- Label and input for refills end -->
+
+  <!-- Label and input for request_date start -->
+  <div class="form-group">
+    <label for="request_date">
+      Request date
+    </label>
+
+    <!-- Input for request_date start -->
+    <input type="text" id="request_date" name="request_date" class="form-control" value="<%= @prescription.request_date %>">
+    <!-- Input for request_date end -->
+  </div>
+  <!-- Label and input for request_date end -->
+
+  <!-- Label and input for veterinarian_id start -->
+  <div class="form-group">
+    <label for="veterinarian_id">
+      Veterinarian
+    </label>
+
+    <!-- Input for veterinarian_id start -->
+    <input type="text" id="veterinarian_id" name="veterinarian_id" class="form-control" value="<%= @prescription.veterinarian_id %>">
+    <!-- Input for veterinarian_id end -->
+  </div>
+  <!-- Label and input for veterinarian_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @prescription.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for approved start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="approved">
+    <!-- Input for approved start -->
+    <input id="approved" class="form-check-input" name="approved" type="checkbox" value="1" <%= "checked" if @prescription.approved %>>
+    <!-- Input for approved end -->
+    <label for="approved" class="form-check-label">
+      Approved
+    </label>
+  </div>
+
+  <!-- Label and input for denial_code_id start -->
+  <div class="form-group">
+    <label for="denial_code_id">
+      Denial code
+    </label>
+
+    <!-- Input for denial_code_id start -->
+    <input type="text" id="denial_code_id" name="denial_code_id" class="form-control" value="<%= @prescription.denial_code_id %>">
+    <!-- Input for denial_code_id end -->
+  </div>
+  <!-- Label and input for denial_code_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update prescription
+  </button>
+</form>
+
+<hr>
+
+<a href="/prescriptions">
+  Go back
+</a>

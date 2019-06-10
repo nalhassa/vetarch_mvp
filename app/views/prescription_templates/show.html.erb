@@ -1,0 +1,172 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Prescription #<%= @prescription.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/prescriptions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link prescription start -->
+      <div class="col">
+        <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit prescription
+        </a>
+      </div>
+      <!-- Edit link prescription end -->
+
+      <!-- Delete link prescription start -->
+      <div class="col">
+        <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-block btn-outline-secondary">
+          Delete prescription
+        </a>
+      </div>
+      <!-- Delete link prescription end -->
+    </div>
+
+    <dl>
+      <dt>
+        Client
+      </dt>
+      <!-- Display client_id start -->
+      <dd>
+        <%= @prescription.client_id %>
+      </dd>
+      <!-- Display client_id end -->
+
+      <dt>
+        Medication
+      </dt>
+      <!-- Display medication_id start -->
+      <dd>
+        <%= @prescription.medication_id %>
+      </dd>
+      <!-- Display medication_id end -->
+
+      <dt>
+        Pet
+      </dt>
+      <!-- Display pet_id start -->
+      <dd>
+        <%= @prescription.pet_id %>
+      </dd>
+      <!-- Display pet_id end -->
+
+      <dt>
+        Quantity
+      </dt>
+      <!-- Display quantity start -->
+      <dd>
+        <%= @prescription.quantity %>
+      </dd>
+      <!-- Display quantity end -->
+
+      <dt>
+        Package size
+      </dt>
+      <!-- Display package_size start -->
+      <dd>
+        <%= @prescription.package_size %>
+      </dd>
+      <!-- Display package_size end -->
+
+      <dt>
+        Dosage
+      </dt>
+      <!-- Display dosage start -->
+      <dd>
+        <%= @prescription.dosage %>
+      </dd>
+      <!-- Display dosage end -->
+
+      <dt>
+        Dosage time units
+      </dt>
+      <!-- Display dosage_time_units start -->
+      <dd>
+        <%= @prescription.dosage_time_units %>
+      </dd>
+      <!-- Display dosage_time_units end -->
+
+      <dt>
+        Refills
+      </dt>
+      <!-- Display refills start -->
+      <dd>
+        <%= @prescription.refills %>
+      </dd>
+      <!-- Display refills end -->
+
+      <dt>
+        Request date
+      </dt>
+      <!-- Display request_date start -->
+      <dd>
+        <%= @prescription.request_date %>
+      </dd>
+      <!-- Display request_date end -->
+
+      <dt>
+        Veterinarian
+      </dt>
+      <!-- Display veterinarian_id start -->
+      <dd>
+        <%= @prescription.veterinarian_id %>
+      </dd>
+      <!-- Display veterinarian_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @prescription.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Approved
+      </dt>
+      <!-- Display approved start -->
+      <dd>
+        <%= @prescription.approved %>
+      </dd>
+      <!-- Display approved end -->
+
+      <dt>
+        Denial code
+      </dt>
+      <!-- Display denial_code_id start -->
+      <dd>
+        <%= @prescription.denial_code_id %>
+      </dd>
+      <!-- Display denial_code_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@prescription.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@prescription.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
