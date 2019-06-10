@@ -1,6 +1,6 @@
 class DenialCodesController < ApplicationController
   def index
-    @denial_codes = DenialCode.all
+    @denial_codes = DenialCode.page(params[:page]).per(10)
 
     render("denial_code_templates/index.html.erb")
   end

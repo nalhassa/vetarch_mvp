@@ -1,6 +1,6 @@
 class VeterinariansController < ApplicationController
   def index
-    @veterinarians = Veterinarian.all
+    @veterinarians = Veterinarian.page(params[:page]).per(10)
 
     render("veterinarian_templates/index.html.erb")
   end

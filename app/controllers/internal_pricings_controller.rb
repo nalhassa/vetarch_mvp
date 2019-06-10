@@ -1,6 +1,6 @@
 class InternalPricingsController < ApplicationController
   def index
-    @internal_pricings = InternalPricing.all
+    @internal_pricings = InternalPricing.page(params[:page]).per(10)
 
     render("internal_pricing_templates/index.html.erb")
   end

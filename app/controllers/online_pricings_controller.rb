@@ -1,6 +1,6 @@
 class OnlinePricingsController < ApplicationController
   def index
-    @online_pricings = OnlinePricing.all
+    @online_pricings = OnlinePricing.page(params[:page]).per(10)
 
     render("online_pricing_templates/index.html.erb")
   end
