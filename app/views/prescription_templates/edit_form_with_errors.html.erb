@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for pet_id start -->
-    <input type="text" id="pet_id" name="pet_id" class="form-control" value="<%= @prescription.pet_id %>">
+    <%= select_tag(:pet_id, options_from_collection_for_select(Pet.all, :id, :name, @prescription.pet_id), :class => "form-control") %>
     <!-- Input for pet_id end -->
   </div>
   <!-- Label and input for pet_id end -->
