@@ -4,6 +4,8 @@ RSpec.describe Medication, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:pricings) }
+
     it { should have_many(:prescriptions) }
 
     end
