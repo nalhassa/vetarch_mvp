@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @medication.pricings.each do |online_pricing| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/online_pricings/<%= online_pricing.id %>">
           <%= online_pricing.provider %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_online_pricing_from_medication/<%= online_pricing.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="medication_pricings_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "medication_templates/medication_pricings_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

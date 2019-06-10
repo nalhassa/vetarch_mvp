@@ -5,69 +5,47 @@
 
 <hr>
 
-<!-- Form pet start -->
 <form action="/create_pet" method="post">
-<!-- Form pet end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for dob start -->
   <div class="form-group">
     <label for="dob">
       Dob
     </label>
 
-    <!-- Input for dob start -->
     <input type="text" id="dob" name="dob" class="form-control">
-    <!-- Input for dob end -->
   </div>
-  <!-- Label and input for dob end -->
 
-  <!-- Label and input for weight start -->
   <div class="form-group">
     <label for="weight">
       Weight
     </label>
 
-    <!-- Input for weight start -->
     <input type="text" id="weight" name="weight" class="form-control">
-    <!-- Input for weight end -->
   </div>
-  <!-- Label and input for weight end -->
 
-  <!-- Label and input for client_id start -->
   <div class="form-group">
     <label for="client_id">
       Client
     </label>
 
-    <!-- Input for client_id start -->
     <%= select_tag(:client_id, options_from_collection_for_select(Client.all, :id, :first_name, @pet.client_id), :class => "form-control") %>
-    <!-- Input for client_id end -->
   </div>
-  <!-- Label and input for client_id end -->
 
-  <!-- Label and input for species start -->
   <div class="form-group">
     <label for="species">
       Species
     </label>
 
-    <!-- Input for species start -->
     <input type="text" id="species" name="species" class="form-control">
-    <!-- Input for species end -->
   </div>
-  <!-- Label and input for species end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create pet

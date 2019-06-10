@@ -4,21 +4,15 @@
 
 <hr>
 
-<!-- Form denial_code start -->
 <form action="/update_denial_code/<%= @denial_code.id %>" method="post">
-<!-- Form denial_code end -->
 
-  <!-- Label and input for code start -->
   <div class="form-group">
     <label for="code">
       Code
     </label>
 
-    <!-- Input for code start -->
     <input type="text" id="code" name="code" class="form-control" value="<%= @denial_code.code %>">
-    <!-- Input for code end -->
   </div>
-  <!-- Label and input for code end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update denial code

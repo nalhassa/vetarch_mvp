@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link prescription start -->
       <div class="col">
         <% if current_user == @prescription.user %>
           <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link prescription end -->
 
-      <!-- Delete link prescription start -->
       <div class="col">
         <% if current_user == @prescription.user %>
           <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link prescription end -->
     </div>
 
     <dl>
       <dt>
         Client
       </dt>
-      <!-- Display client_id start -->
       <dd>
         <% if @prescription.client.present? %>
           <a href="/clients/<%= @prescription.client_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display client_id end -->
 
       <dt>
         Medication
       </dt>
-      <!-- Display medication_id start -->
       <dd>
         <% if @prescription.medication.present? %>
           <a href="/medications/<%= @prescription.medication_id %>">
@@ -57,12 +50,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display medication_id end -->
 
       <dt>
         Pet
       </dt>
-      <!-- Display pet_id start -->
       <dd>
         <% if @prescription.pet.present? %>
           <a href="/pets/<%= @prescription.pet_id %>">
@@ -70,66 +61,52 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display pet_id end -->
 
       <dt>
         Quantity
       </dt>
-      <!-- Display quantity start -->
       <dd>
         <%= @prescription.quantity %>
       </dd>
-      <!-- Display quantity end -->
 
       <dt>
         Package size
       </dt>
-      <!-- Display package_size start -->
       <dd>
         <%= @prescription.package_size %>
       </dd>
-      <!-- Display package_size end -->
 
       <dt>
         Dosage
       </dt>
-      <!-- Display dosage start -->
       <dd>
         <%= @prescription.dosage %>
       </dd>
-      <!-- Display dosage end -->
 
       <dt>
         Dosage time units
       </dt>
-      <!-- Display dosage_time_units start -->
       <dd>
         <%= @prescription.dosage_time_units %>
       </dd>
-      <!-- Display dosage_time_units end -->
 
       <dt>
         Refills
       </dt>
-      <!-- Display refills start -->
       <dd>
         <%= @prescription.refills %>
       </dd>
-      <!-- Display refills end -->
 
       <dt>
         Request date
       </dt>
-      <!-- Display request_date start -->
       <dd>
         <%= @prescription.request_date %>
       </dd>
-      <!-- Display request_date end -->
 
       <dt>
         Veterinarian
       </dt>
-      <!-- Display veterinarian_id start -->
       <dd>
         <% if @prescription.veterinarian.present? %>
           <a href="/veterinarians/<%= @prescription.veterinarian_id %>">
@@ -137,12 +114,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display veterinarian_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @prescription.user.present? %>
           <a href="/users/<%= @prescription.user_id %>">
@@ -150,21 +125,17 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Approved
       </dt>
-      <!-- Display approved start -->
       <dd>
         <%= @prescription.approved %>
       </dd>
-      <!-- Display approved end -->
 
       <dt>
         Denial code
       </dt>
-      <!-- Display denial_code_id start -->
       <dd>
         <% if @prescription.denial_code.present? %>
           <a href="/denial_codes/<%= @prescription.denial_code_id %>">
@@ -172,28 +143,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display denial_code_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@prescription.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@prescription.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @client.pets.each do |pet| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/pets/<%= pet.id %>">
           <%= pet.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_pet_from_client/<%= pet.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="client_pets_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "client_templates/client_pets_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

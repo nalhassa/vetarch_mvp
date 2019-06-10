@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link internal_pricing start -->
       <div class="col">
         <a href="/internal_pricings/<%= @internal_pricing.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit internal pricing
         </a>
       </div>
-      <!-- Edit link internal_pricing end -->
 
-      <!-- Delete link internal_pricing start -->
       <div class="col">
         <a href="/delete_internal_pricing/<%= @internal_pricing.id %>" class="btn btn-block btn-outline-secondary">
           Delete internal pricing
         </a>
       </div>
-      <!-- Delete link internal_pricing end -->
     </div>
 
     <dl>
       <dt>
         Cet
       </dt>
-      <!-- Display cet start -->
       <dd>
         <%= @internal_pricing.cet %>
       </dd>
-      <!-- Display cet end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @internal_pricing.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Cogs
       </dt>
-      <!-- Display cogs start -->
       <dd>
         <%= @internal_pricing.cogs %>
       </dd>
-      <!-- Display cogs end -->
 
       <dt>
         Medication
       </dt>
-      <!-- Display medication_id start -->
       <dd>
         <% if @internal_pricing.medication.present? %>
           <a href="/medications/<%= @internal_pricing.medication_id %>">
@@ -67,28 +56,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display medication_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@internal_pricing.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@internal_pricing.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

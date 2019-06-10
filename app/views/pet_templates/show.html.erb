@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link pet start -->
       <div class="col">
         <a href="/pets/<%= @pet.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit pet
         </a>
       </div>
-      <!-- Edit link pet end -->
 
-      <!-- Delete link pet start -->
       <div class="col">
         <a href="/delete_pet/<%= @pet.id %>" class="btn btn-block btn-outline-secondary">
           Delete pet
         </a>
       </div>
-      <!-- Delete link pet end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @pet.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Dob
       </dt>
-      <!-- Display dob start -->
       <dd>
         <%= @pet.dob %>
       </dd>
-      <!-- Display dob end -->
 
       <dt>
         Weight
       </dt>
-      <!-- Display weight start -->
       <dd>
         <%= @pet.weight %>
       </dd>
-      <!-- Display weight end -->
 
       <dt>
         Client
       </dt>
-      <!-- Display client_id start -->
       <dd>
         <% if @pet.client.present? %>
           <a href="/clients/<%= @pet.client_id %>">
@@ -67,42 +56,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display client_id end -->
 
       <dt>
         Species
       </dt>
-      <!-- Display species start -->
       <dd>
         <%= @pet.species %>
       </dd>
-      <!-- Display species end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@pet.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@pet.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "pet_templates/pet_prescriptions" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -1,59 +1,38 @@
-<!-- Form pet start -->
 <form action="/create_pet_from_client" method="post">
-<!-- Form pet end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @pet.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for dob start -->
   <div class="form-group">
     <label for="dob">
       Dob
     </label>
 
-    <!-- Input for dob start -->
     <input type="text" id="dob" name="dob" class="form-control" value="<%= @pet.dob %>">
-    <!-- Input for dob end -->
   </div>
-  <!-- Label and input for dob end -->
 
-  <!-- Label and input for weight start -->
   <div class="form-group">
     <label for="weight">
       Weight
     </label>
 
-    <!-- Input for weight start -->
     <input type="text" id="weight" name="weight" class="form-control" value="<%= @pet.weight %>">
-    <!-- Input for weight end -->
   </div>
-  <!-- Label and input for weight end -->
 
-  <!-- Label and input for client_id start -->
-  <!-- Input for client_id start -->
   <input type="hidden" name="client_id" value="<%= @client.id %>">
-  <!-- Input for client_id end -->
 
-  <!-- Label and input for species start -->
   <div class="form-group">
     <label for="species">
       Species
     </label>
 
-    <!-- Input for species start -->
     <input type="text" id="species" name="species" class="form-control" value="<%= @pet.species %>">
-    <!-- Input for species end -->
   </div>
-  <!-- Label and input for species end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create pet
