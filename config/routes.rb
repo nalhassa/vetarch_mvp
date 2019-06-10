@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Denial code resource:
+
+  # CREATE
+  get("/denial_codes/new", { :controller => "denial_codes", :action => "new_form" })
+  post("/create_denial_code", { :controller => "denial_codes", :action => "create_row" })
+
+  # READ
+  get("/denial_codes", { :controller => "denial_codes", :action => "index" })
+  get("/denial_codes/:id_to_display", { :controller => "denial_codes", :action => "show" })
+
+  # UPDATE
+  get("/denial_codes/:prefill_with_id/edit", { :controller => "denial_codes", :action => "edit_form" })
+  post("/update_denial_code/:id_to_modify", { :controller => "denial_codes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_denial_code/:id_to_remove", { :controller => "denial_codes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Internal pricing resource:
 
   # CREATE
