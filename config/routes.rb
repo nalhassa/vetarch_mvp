@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "veterinarians#index"
   # Routes for the Denial code resource:
 
   # CREATE
