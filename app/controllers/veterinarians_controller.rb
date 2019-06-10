@@ -6,6 +6,7 @@ class VeterinariansController < ApplicationController
   end
 
   def show
+    @prescription = Prescription.new
     @veterinarian = Veterinarian.find(params.fetch("id_to_display"))
 
     render("veterinarian_templates/show.html.erb")

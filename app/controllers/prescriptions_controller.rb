@@ -43,6 +43,136 @@ class PrescriptionsController < ApplicationController
     end
   end
 
+  def create_row_from_veterinarian
+    @prescription = Prescription.new
+
+    @prescription.client_id = params.fetch("client_id")
+    @prescription.medication_id = params.fetch("medication_id")
+    @prescription.pet_id = params.fetch("pet_id")
+    @prescription.quantity = params.fetch("quantity")
+    @prescription.package_size = params.fetch("package_size")
+    @prescription.dosage = params.fetch("dosage")
+    @prescription.dosage_time_units = params.fetch("dosage_time_units")
+    @prescription.refills = params.fetch("refills")
+    @prescription.request_date = params.fetch("request_date")
+    @prescription.veterinarian_id = params.fetch("veterinarian_id")
+    @prescription.user_id = params.fetch("user_id")
+    @prescription.approved = params.fetch("approved")
+    @prescription.denial_code_id = params.fetch("denial_code_id")
+
+    if @prescription.valid?
+      @prescription.save
+
+      redirect_to("/veterinarians/#{@prescription.veterinarian_id}", notice: "Prescription created successfully.")
+    else
+      render("prescription_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_client
+    @prescription = Prescription.new
+
+    @prescription.client_id = params.fetch("client_id")
+    @prescription.medication_id = params.fetch("medication_id")
+    @prescription.pet_id = params.fetch("pet_id")
+    @prescription.quantity = params.fetch("quantity")
+    @prescription.package_size = params.fetch("package_size")
+    @prescription.dosage = params.fetch("dosage")
+    @prescription.dosage_time_units = params.fetch("dosage_time_units")
+    @prescription.refills = params.fetch("refills")
+    @prescription.request_date = params.fetch("request_date")
+    @prescription.veterinarian_id = params.fetch("veterinarian_id")
+    @prescription.user_id = params.fetch("user_id")
+    @prescription.approved = params.fetch("approved")
+    @prescription.denial_code_id = params.fetch("denial_code_id")
+
+    if @prescription.valid?
+      @prescription.save
+
+      redirect_to("/clients/#{@prescription.client_id}", notice: "Prescription created successfully.")
+    else
+      render("prescription_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_pet
+    @prescription = Prescription.new
+
+    @prescription.client_id = params.fetch("client_id")
+    @prescription.medication_id = params.fetch("medication_id")
+    @prescription.pet_id = params.fetch("pet_id")
+    @prescription.quantity = params.fetch("quantity")
+    @prescription.package_size = params.fetch("package_size")
+    @prescription.dosage = params.fetch("dosage")
+    @prescription.dosage_time_units = params.fetch("dosage_time_units")
+    @prescription.refills = params.fetch("refills")
+    @prescription.request_date = params.fetch("request_date")
+    @prescription.veterinarian_id = params.fetch("veterinarian_id")
+    @prescription.user_id = params.fetch("user_id")
+    @prescription.approved = params.fetch("approved")
+    @prescription.denial_code_id = params.fetch("denial_code_id")
+
+    if @prescription.valid?
+      @prescription.save
+
+      redirect_to("/pets/#{@prescription.pet_id}", notice: "Prescription created successfully.")
+    else
+      render("prescription_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_medication
+    @prescription = Prescription.new
+
+    @prescription.client_id = params.fetch("client_id")
+    @prescription.medication_id = params.fetch("medication_id")
+    @prescription.pet_id = params.fetch("pet_id")
+    @prescription.quantity = params.fetch("quantity")
+    @prescription.package_size = params.fetch("package_size")
+    @prescription.dosage = params.fetch("dosage")
+    @prescription.dosage_time_units = params.fetch("dosage_time_units")
+    @prescription.refills = params.fetch("refills")
+    @prescription.request_date = params.fetch("request_date")
+    @prescription.veterinarian_id = params.fetch("veterinarian_id")
+    @prescription.user_id = params.fetch("user_id")
+    @prescription.approved = params.fetch("approved")
+    @prescription.denial_code_id = params.fetch("denial_code_id")
+
+    if @prescription.valid?
+      @prescription.save
+
+      redirect_to("/medications/#{@prescription.medication_id}", notice: "Prescription created successfully.")
+    else
+      render("prescription_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_denial_code
+    @prescription = Prescription.new
+
+    @prescription.client_id = params.fetch("client_id")
+    @prescription.medication_id = params.fetch("medication_id")
+    @prescription.pet_id = params.fetch("pet_id")
+    @prescription.quantity = params.fetch("quantity")
+    @prescription.package_size = params.fetch("package_size")
+    @prescription.dosage = params.fetch("dosage")
+    @prescription.dosage_time_units = params.fetch("dosage_time_units")
+    @prescription.refills = params.fetch("refills")
+    @prescription.request_date = params.fetch("request_date")
+    @prescription.veterinarian_id = params.fetch("veterinarian_id")
+    @prescription.user_id = params.fetch("user_id")
+    @prescription.approved = params.fetch("approved")
+    @prescription.denial_code_id = params.fetch("denial_code_id")
+
+    if @prescription.valid?
+      @prescription.save
+
+      redirect_to("/denial_codes/#{@prescription.denial_code_id}", notice: "Prescription created successfully.")
+    else
+      render("prescription_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @prescription = Prescription.find(params.fetch("prefill_with_id"))
 

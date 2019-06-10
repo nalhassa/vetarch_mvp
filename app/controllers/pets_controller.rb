@@ -6,6 +6,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    @prescription = Prescription.new
     @pet = Pet.find(params.fetch("id_to_display"))
 
     render("pet_templates/show.html.erb")
@@ -30,6 +31,24 @@ class PetsController < ApplicationController
       @pet.save
 
       redirect_back(:fallback_location => "/pets", :notice => "Pet created successfully.")
+    else
+      render("pet_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_client
+    @pet = Pet.new
+
+    @pet.name = params.fetch("name")
+    @pet.dob = params.fetch("dob")
+    @pet.weight = params.fetch("weight")
+    @pet.client_id = params.fetch("client_id")
+    @pet.species = params.fetch("species")
+
+    if @pet.valid?
+      @pet.save
+
+      redirect_to("/clients/#{@pet.client_id}", notice: "Pet created successfully.")
     else
       render("pet_templates/new_form_with_errors.html.erb")
     end

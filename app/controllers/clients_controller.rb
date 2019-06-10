@@ -6,6 +6,8 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @pet = Pet.new
+    @prescription = Prescription.new
     @client = Client.find(params.fetch("id_to_display"))
 
     render("client_templates/show.html.erb")

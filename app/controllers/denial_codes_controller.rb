@@ -6,6 +6,7 @@ class DenialCodesController < ApplicationController
   end
 
   def show
+    @prescription = Prescription.new
     @denial_code = DenialCode.find(params.fetch("id_to_display"))
 
     render("denial_code_templates/show.html.erb")

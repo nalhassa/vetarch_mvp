@@ -6,6 +6,8 @@ class MedicationsController < ApplicationController
   end
 
   def show
+    @online_pricing = OnlinePricing.new
+    @prescription = Prescription.new
     @medication = Medication.find(params.fetch("id_to_display"))
 
     render("medication_templates/show.html.erb")

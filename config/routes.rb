@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/online_pricings/new", { :controller => "online_pricings", :action => "new_form" })
   post("/create_online_pricing", { :controller => "online_pricings", :action => "create_row" })
+  post("/create_online_pricing_from_medication", { :controller => "online_pricings", :action => "create_row_from_medication" })
 
   # READ
   get("/online_pricings", { :controller => "online_pricings", :action => "index" })
@@ -84,6 +85,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/pets/new", { :controller => "pets", :action => "new_form" })
   post("/create_pet", { :controller => "pets", :action => "create_row" })
+  post("/create_pet_from_client", { :controller => "pets", :action => "create_row_from_client" })
 
   # READ
   get("/pets", { :controller => "pets", :action => "index" })
@@ -104,6 +106,11 @@ Rails.application.routes.draw do
   # CREATE
   get("/prescriptions/new", { :controller => "prescriptions", :action => "new_form" })
   post("/create_prescription", { :controller => "prescriptions", :action => "create_row" })
+  post("/create_prescription_from_denial_code", { :controller => "prescriptions", :action => "create_row_from_denial_code" })
+  post("/create_prescription_from_medication", { :controller => "prescriptions", :action => "create_row_from_medication" })
+  post("/create_prescription_from_pet", { :controller => "prescriptions", :action => "create_row_from_pet" })
+  post("/create_prescription_from_client", { :controller => "prescriptions", :action => "create_row_from_client" })
+  post("/create_prescription_from_veterinarian", { :controller => "prescriptions", :action => "create_row_from_veterinarian" })
 
   # READ
   get("/prescriptions", { :controller => "prescriptions", :action => "index" })
