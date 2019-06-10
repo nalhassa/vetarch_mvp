@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Client #<%= @client.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/clients" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link client start -->
+      <div class="col">
+        <a href="/clients/<%= @client.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit client
+        </a>
+      </div>
+      <!-- Edit link client end -->
+
+      <!-- Delete link client start -->
+      <div class="col">
+        <a href="/delete_client/<%= @client.id %>" class="btn btn-block btn-outline-secondary">
+          Delete client
+        </a>
+      </div>
+      <!-- Delete link client end -->
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <!-- Display first_name start -->
+      <dd>
+        <%= @client.first_name %>
+      </dd>
+      <!-- Display first_name end -->
+
+      <dt>
+        Last name
+      </dt>
+      <!-- Display last_name start -->
+      <dd>
+        <%= @client.last_name %>
+      </dd>
+      <!-- Display last_name end -->
+
+      <dt>
+        Street address
+      </dt>
+      <!-- Display street_address start -->
+      <dd>
+        <%= @client.street_address %>
+      </dd>
+      <!-- Display street_address end -->
+
+      <dt>
+        Zip code
+      </dt>
+      <!-- Display zip_code start -->
+      <dd>
+        <%= @client.zip_code %>
+      </dd>
+      <!-- Display zip_code end -->
+
+      <dt>
+        Apartment number
+      </dt>
+      <!-- Display apartment_number start -->
+      <dd>
+        <%= @client.apartment_number %>
+      </dd>
+      <!-- Display apartment_number end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@client.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@client.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
