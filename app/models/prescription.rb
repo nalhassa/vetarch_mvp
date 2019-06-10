@@ -1,6 +1,9 @@
 class Prescription < ApplicationRecord
   # Direct associations
 
+  belongs_to :denial_code,
+             :required => false
+
   belongs_to :medication
 
   belongs_to :pet
