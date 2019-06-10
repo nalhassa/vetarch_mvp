@@ -1,0 +1,68 @@
+<h1>
+  Edit internal pricing #<%= @internal_pricing.id %>
+</h1>
+
+<hr>
+
+<!-- Form internal_pricing start -->
+<form action="/update_internal_pricing/<%= @internal_pricing.id %>" method="post">
+<!-- Form internal_pricing end -->
+
+  <!-- Label and input for cet start -->
+  <div class="form-group">
+    <label for="cet">
+      Cet
+    </label>
+
+    <!-- Input for cet start -->
+    <input type="text" id="cet" name="cet" class="form-control" value="<%= @internal_pricing.cet %>">
+    <!-- Input for cet end -->
+  </div>
+  <!-- Label and input for cet end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @internal_pricing.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for cogs start -->
+  <div class="form-group">
+    <label for="cogs">
+      Cogs
+    </label>
+
+    <!-- Input for cogs start -->
+    <input type="text" id="cogs" name="cogs" class="form-control" value="<%= @internal_pricing.cogs %>">
+    <!-- Input for cogs end -->
+  </div>
+  <!-- Label and input for cogs end -->
+
+  <!-- Label and input for medication_id start -->
+  <div class="form-group">
+    <label for="medication_id">
+      Medication
+    </label>
+
+    <!-- Input for medication_id start -->
+    <input type="text" id="medication_id" name="medication_id" class="form-control" value="<%= @internal_pricing.medication_id %>">
+    <!-- Input for medication_id end -->
+  </div>
+  <!-- Label and input for medication_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update internal pricing
+  </button>
+</form>
+
+<hr>
+
+<a href="/internal_pricings">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Internal pricing resource:
+
+  # CREATE
+  get("/internal_pricings/new", { :controller => "internal_pricings", :action => "new_form" })
+  post("/create_internal_pricing", { :controller => "internal_pricings", :action => "create_row" })
+
+  # READ
+  get("/internal_pricings", { :controller => "internal_pricings", :action => "index" })
+  get("/internal_pricings/:id_to_display", { :controller => "internal_pricings", :action => "show" })
+
+  # UPDATE
+  get("/internal_pricings/:prefill_with_id/edit", { :controller => "internal_pricings", :action => "edit_form" })
+  post("/update_internal_pricing/:id_to_modify", { :controller => "internal_pricings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_internal_pricing/:id_to_remove", { :controller => "internal_pricings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Online pricing resource:
 
   # CREATE
