@@ -124,7 +124,7 @@
     </label>
 
     <!-- Input for veterinarian_id start -->
-    <input type="text" id="veterinarian_id" name="veterinarian_id" class="form-control">
+    <%= select_tag(:veterinarian_id, options_from_collection_for_select(Veterinarian.all, :id, :first_name, @prescription.veterinarian_id), :class => "form-control") %>
     <!-- Input for veterinarian_id end -->
   </div>
   <!-- Label and input for veterinarian_id end -->
