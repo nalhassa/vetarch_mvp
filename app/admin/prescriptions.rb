@@ -1,4 +1,6 @@
 ActiveAdmin.register Prescription do
+
+ permit_params :client_id, :medication_id, :pet_id, :quantity, :package_size, :dosage, :dosage_time_units, :refills, :request_date, :veterinarian_id, :user_id, :approved, :denial_code_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
