@@ -1,6 +1,8 @@
 class Prescription < ApplicationRecord
   # Direct associations
 
+  belongs_to :pet
+
   belongs_to :client,
              :counter_cache => true
 

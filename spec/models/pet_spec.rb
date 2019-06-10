@@ -4,6 +4,8 @@ RSpec.describe Pet, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:prescriptions) }
+
     it { should belong_to(:client) }
 
     end
