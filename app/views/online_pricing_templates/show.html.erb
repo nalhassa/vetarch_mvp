@@ -70,7 +70,11 @@
       </dt>
       <!-- Display medication_id start -->
       <dd>
-        <%= @online_pricing.medication_id %>
+        <% if @online_pricing.medication.present? %>
+          <a href="/medications/<%= @online_pricing.medication_id %>">
+            <%= @online_pricing.medication.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display medication_id end -->
 

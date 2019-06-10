@@ -94,7 +94,11 @@
 
         <!-- Display online_pricing.medication_id start -->
         <td>
-          <%= online_pricing.medication.name %>
+          <% if online_pricing.medication.present? %>
+            <a href="/medications/<%= online_pricing.medication.id %>">
+              <%= online_pricing.medication.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display online_pricing.medication_id end -->
 

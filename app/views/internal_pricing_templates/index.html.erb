@@ -84,7 +84,11 @@
 
         <!-- Display internal_pricing.medication_id start -->
         <td>
-          <%= internal_pricing.medication.name %>
+          <% if internal_pricing.medication.present? %>
+            <a href="/medications/<%= internal_pricing.medication.id %>">
+              <%= internal_pricing.medication.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display internal_pricing.medication_id end -->
 

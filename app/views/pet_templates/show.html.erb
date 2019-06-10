@@ -61,7 +61,11 @@
       </dt>
       <!-- Display client_id start -->
       <dd>
-        <%= @pet.client_id %>
+        <% if @pet.client.present? %>
+          <a href="/clients/<%= @pet.client_id %>">
+            <%= @pet.client.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display client_id end -->
 

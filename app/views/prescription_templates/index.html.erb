@@ -102,19 +102,31 @@
 
         <!-- Display prescription.client_id start -->
         <td>
-          <%= prescription.client.first_name %>
+          <% if prescription.client.present? %>
+            <a href="/clients/<%= prescription.client.id %>">
+              <%= prescription.client.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.client_id end -->
 
         <!-- Display prescription.medication_id start -->
         <td>
-          <%= prescription.medication.name %>
+          <% if prescription.medication.present? %>
+            <a href="/medications/<%= prescription.medication.id %>">
+              <%= prescription.medication.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.medication_id end -->
 
         <!-- Display prescription.pet_id start -->
         <td>
-          <%= prescription.pet.name %>
+          <% if prescription.pet.present? %>
+            <a href="/pets/<%= prescription.pet.id %>">
+              <%= prescription.pet.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.pet_id end -->
 
@@ -156,13 +168,21 @@
 
         <!-- Display prescription.veterinarian_id start -->
         <td>
-          <%= prescription.veterinarian.first_name %>
+          <% if prescription.veterinarian.present? %>
+            <a href="/veterinarians/<%= prescription.veterinarian.id %>">
+              <%= prescription.veterinarian.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.veterinarian_id end -->
 
         <!-- Display prescription.user_id start -->
         <td>
-          <%= prescription.user.email %>
+          <% if prescription.user.present? %>
+            <a href="/users/<%= prescription.user.id %>">
+              <%= prescription.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.user_id end -->
 
@@ -174,7 +194,11 @@
 
         <!-- Display prescription.denial_code_id start -->
         <td>
-          <%= prescription.denial_code.code %>
+          <% if prescription.denial_code.present? %>
+            <a href="/denial_codes/<%= prescription.denial_code.id %>">
+              <%= prescription.denial_code.code %>
+            </a>
+          <% end %>
         </td>
         <!-- Display prescription.denial_code_id end -->
 
