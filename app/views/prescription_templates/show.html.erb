@@ -13,17 +13,21 @@
 
       <!-- Edit link prescription start -->
       <div class="col">
-        <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit prescription
-        </a>
+        <% if current_user == @prescription.user %>
+          <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit prescription
+          </a>
+        <% end %>
       </div>
       <!-- Edit link prescription end -->
 
       <!-- Delete link prescription start -->
       <div class="col">
-        <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-block btn-outline-secondary">
-          Delete prescription
-        </a>
+        <% if current_user == @prescription.user %>
+          <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete prescription
+          </a>
+        <% end %>
       </div>
       <!-- Delete link prescription end -->
     </div>
