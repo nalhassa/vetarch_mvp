@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @veterinarian.errors.any? %>
+  <% @veterinarian.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit veterinarian #<%= @veterinarian.id %>
+</h1>
+
+<hr>
+
+<!-- Form veterinarian start -->
+<form action="/update_veterinarian/<%= @veterinarian.id %>" method="post">
+<!-- Form veterinarian end -->
+
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <label for="first_name">
+      First name
+    </label>
+
+    <!-- Input for first_name start -->
+    <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @veterinarian.first_name %>">
+    <!-- Input for first_name end -->
+  </div>
+  <!-- Label and input for first_name end -->
+
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <label for="last_name">
+      Last name
+    </label>
+
+    <!-- Input for last_name start -->
+    <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @veterinarian.last_name %>">
+    <!-- Input for last_name end -->
+  </div>
+  <!-- Label and input for last_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update veterinarian
+  </button>
+</form>
+
+<hr>
+
+<a href="/veterinarians">
+  Go back
+</a>
