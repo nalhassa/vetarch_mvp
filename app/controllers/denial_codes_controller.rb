@@ -1,6 +1,7 @@
 class DenialCodesController < ApplicationController
   def index
-    @denial_codes = DenialCode.page(params[:page]).per(10)
+    @q = DenialCode.ransack(params[:q])
+    @denial_codes = @q.result(:distinct => true).includes(:prescriptions).page(params[:page]).per(10)
 
     render("denial_code_templates/index.html.erb")
   end

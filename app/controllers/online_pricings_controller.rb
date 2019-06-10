@@ -1,6 +1,7 @@
 class OnlinePricingsController < ApplicationController
   def index
-    @online_pricings = OnlinePricing.page(params[:page]).per(10)
+    @q = OnlinePricing.ransack(params[:q])
+    @online_pricings = @q.result(:distinct => true).includes(:medication).page(params[:page]).per(10)
 
     render("online_pricing_templates/index.html.erb")
   end

@@ -1,0 +1,192 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "prescriptions_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :approved_eq, "Approved" %>
+    <div>
+      <label class="radio-inline">
+        <%= f.radio_button :approved_eq, "1", checked: ((params[:q] && params[:q][:approved_eq]) == "1" ? "checked" : "") %> Yes
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :approved_eq, "0", checked: ((params[:q] && params[:q][:approved_eq]) == "0" ? "checked" : "")%> No
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :approved_eq, ""%> Either
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :request_date, "Request date" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='request_dategteqPicker' data-target-input="nearest">
+          <%= f.text_field :request_date_gteq, :class => "form-control datetimepicker-input", :placeholder => "Request date greater than or equal to", :data => {:target => '#request_dategteqPicker'} %>
+          <div class="input-group-append" data-target='#request_dategteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='request_datelteqPicker' data-target-input="nearest">
+          <%= f.text_field :request_date_lteq, :class => "form-control datetimepicker-input", :placeholder => "Request date less than or equal to", :data => {:target => '#request_datelteqPicker'} %>
+          <div class="input-group-append" data-target='#request_datelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#request_dategteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#request_datelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#request_dategteqPicker').on("dp.change", function (e) {
+              $('#request_datelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#request_datelteqPicker').on("dp.change", function (e) {
+              $('#request_dategteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :refills, "Refills" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :refills_gteq, :class => "form-control", :placeholder => "Refills greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :refills_lteq, :class => "form-control", :placeholder => "Refills less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :dosage_time_units_cont, "Dosage time units contains" %>
+    <%= f.text_field :dosage_time_units_cont, :class => "form-control", :placeholder => "Dosage time units contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :dosage, "Dosage" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :dosage_gteq, :class => "form-control", :placeholder => "Dosage greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :dosage_lteq, :class => "form-control", :placeholder => "Dosage less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :package_size, "Package size" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :package_size_gteq, :class => "form-control", :placeholder => "Package size greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :package_size_lteq, :class => "form-control", :placeholder => "Package size less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :quantity, "Quantity" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :quantity_gteq, :class => "form-control", :placeholder => "Quantity greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :quantity_lteq, :class => "form-control", :placeholder => "Quantity less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :veterinarian_first_name_cont, "Veterinarian first_name contains" %>
+    <%= f.text_field :veterinarian_first_name_cont, :class => "form-control", :placeholder => "Veterinarian first_name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :client_first_name_cont, "Client first_name contains" %>
+    <%= f.text_field :client_first_name_cont, :class => "form-control", :placeholder => "Client first_name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pet_name_cont, "Pet name contains" %>
+    <%= f.text_field :pet_name_cont, :class => "form-control", :placeholder => "Pet name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :medication_name_cont, "Medication name contains" %>
+    <%= f.text_field :medication_name_cont, :class => "form-control", :placeholder => "Medication name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :denial_code_code_cont, "DenialCode code contains" %>
+    <%= f.text_field :denial_code_code_cont, :class => "form-control", :placeholder => "DenialCode code contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/prescriptions" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#prescriptions_filters">
+  Show filters
+</a>

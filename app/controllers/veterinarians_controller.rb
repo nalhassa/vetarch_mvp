@@ -1,6 +1,7 @@
 class VeterinariansController < ApplicationController
   def index
-    @veterinarians = Veterinarian.page(params[:page]).per(10)
+    @q = Veterinarian.ransack(params[:q])
+    @veterinarians = @q.result(:distinct => true).includes(:prescriptions).page(params[:page]).per(10)
 
     render("veterinarian_templates/index.html.erb")
   end

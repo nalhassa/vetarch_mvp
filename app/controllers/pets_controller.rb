@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.page(params[:page]).per(10)
+    @q = Pet.ransack(params[:q])
+    @pets = @q.result(:distinct => true).includes(:client, :prescriptions).page(params[:page]).per(10)
 
     render("pet_templates/index.html.erb")
   end

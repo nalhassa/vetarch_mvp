@@ -1,6 +1,7 @@
 class InternalPricingsController < ApplicationController
   def index
-    @internal_pricings = InternalPricing.page(params[:page]).per(10)
+    @q = InternalPricing.ransack(params[:q])
+    @internal_pricings = @q.result(:distinct => true).includes(:medication).page(params[:page]).per(10)
 
     render("internal_pricing_templates/index.html.erb")
   end
