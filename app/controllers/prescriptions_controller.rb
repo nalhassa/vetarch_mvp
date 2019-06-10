@@ -192,7 +192,7 @@ class PrescriptionsController < ApplicationController
     @prescription.refills = params.fetch("refills")
     @prescription.request_date = params.fetch("request_date")
     @prescription.veterinarian_id = params.fetch("veterinarian_id")
-    @prescription.user_id = params.fetch("user_id")
+    
     @prescription.approved = params.fetch("approved")
     @prescription.denial_code_id = params.fetch("denial_code_id")
 
