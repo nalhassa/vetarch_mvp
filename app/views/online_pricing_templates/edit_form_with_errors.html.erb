@@ -1,0 +1,88 @@
+<!-- Validation failure messages -->
+<% if @online_pricing.errors.any? %>
+  <% @online_pricing.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit online pricing #<%= @online_pricing.id %>
+</h1>
+
+<hr>
+
+<!-- Form online_pricing start -->
+<form action="/update_online_pricing/<%= @online_pricing.id %>" method="post">
+<!-- Form online_pricing end -->
+
+  <!-- Label and input for provider start -->
+  <div class="form-group">
+    <label for="provider">
+      Provider
+    </label>
+
+    <!-- Input for provider start -->
+    <input type="text" id="provider" name="provider" class="form-control" value="<%= @online_pricing.provider %>">
+    <!-- Input for provider end -->
+  </div>
+  <!-- Label and input for provider end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @online_pricing.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for ppd start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="ppd">
+    <!-- Input for ppd start -->
+    <input id="ppd" class="form-check-input" name="ppd" type="checkbox" value="1" <%= "checked" if @online_pricing.ppd %>>
+    <!-- Input for ppd end -->
+    <label for="ppd" class="form-check-label">
+      Ppd
+    </label>
+  </div>
+
+  <!-- Label and input for hyperlink start -->
+  <div class="form-group">
+    <label for="hyperlink">
+      Hyperlink
+    </label>
+
+    <!-- Input for hyperlink start -->
+    <input type="text" id="hyperlink" name="hyperlink" class="form-control" value="<%= @online_pricing.hyperlink %>">
+    <!-- Input for hyperlink end -->
+  </div>
+  <!-- Label and input for hyperlink end -->
+
+  <!-- Label and input for medication_id start -->
+  <div class="form-group">
+    <label for="medication_id">
+      Medication
+    </label>
+
+    <!-- Input for medication_id start -->
+    <input type="text" id="medication_id" name="medication_id" class="form-control" value="<%= @online_pricing.medication_id %>">
+    <!-- Input for medication_id end -->
+  </div>
+  <!-- Label and input for medication_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update online pricing
+  </button>
+</form>
+
+<hr>
+
+<a href="/online_pricings">
+  Go back
+</a>

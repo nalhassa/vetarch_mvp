@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Online pricing resource:
+
+  # CREATE
+  get("/online_pricings/new", { :controller => "online_pricings", :action => "new_form" })
+  post("/create_online_pricing", { :controller => "online_pricings", :action => "create_row" })
+
+  # READ
+  get("/online_pricings", { :controller => "online_pricings", :action => "index" })
+  get("/online_pricings/:id_to_display", { :controller => "online_pricings", :action => "show" })
+
+  # UPDATE
+  get("/online_pricings/:prefill_with_id/edit", { :controller => "online_pricings", :action => "edit_form" })
+  post("/update_online_pricing/:id_to_modify", { :controller => "online_pricings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_online_pricing/:id_to_remove", { :controller => "online_pricings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Medication resource:
 
   # CREATE

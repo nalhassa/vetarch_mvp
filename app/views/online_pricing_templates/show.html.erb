@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Online pricing #<%= @online_pricing.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/online_pricings" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link online_pricing start -->
+      <div class="col">
+        <a href="/online_pricings/<%= @online_pricing.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit online pricing
+        </a>
+      </div>
+      <!-- Edit link online_pricing end -->
+
+      <!-- Delete link online_pricing start -->
+      <div class="col">
+        <a href="/delete_online_pricing/<%= @online_pricing.id %>" class="btn btn-block btn-outline-secondary">
+          Delete online pricing
+        </a>
+      </div>
+      <!-- Delete link online_pricing end -->
+    </div>
+
+    <dl>
+      <dt>
+        Provider
+      </dt>
+      <!-- Display provider start -->
+      <dd>
+        <%= @online_pricing.provider %>
+      </dd>
+      <!-- Display provider end -->
+
+      <dt>
+        Price
+      </dt>
+      <!-- Display price start -->
+      <dd>
+        <%= @online_pricing.price %>
+      </dd>
+      <!-- Display price end -->
+
+      <dt>
+        Ppd
+      </dt>
+      <!-- Display ppd start -->
+      <dd>
+        <%= @online_pricing.ppd %>
+      </dd>
+      <!-- Display ppd end -->
+
+      <dt>
+        Hyperlink
+      </dt>
+      <!-- Display hyperlink start -->
+      <dd>
+        <%= @online_pricing.hyperlink %>
+      </dd>
+      <!-- Display hyperlink end -->
+
+      <dt>
+        Medication
+      </dt>
+      <!-- Display medication_id start -->
+      <dd>
+        <%= @online_pricing.medication_id %>
+      </dd>
+      <!-- Display medication_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@online_pricing.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@online_pricing.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

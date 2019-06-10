@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All online pricings
+    </h1>
+
+    <a href="/online_pricings/new" class="btn btn-block btn-outline-secondary">
+      Add a new online pricing
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Provider
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Ppd
+        </th>
+
+        <th>
+          Hyperlink
+        </th>
+
+        <th>
+          Medication
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @online_pricings.each do |online_pricing| %>
+      <tr>
+        <!-- Display online_pricing.id start -->
+        <td>
+          <%= online_pricing.id %>
+        </td>
+        <!-- Display online_pricing.id end -->
+
+        <!-- Display online_pricing.provider start -->
+        <td>
+          <%= online_pricing.provider %>
+        </td>
+        <!-- Display online_pricing.provider end -->
+
+        <!-- Display online_pricing.price start -->
+        <td>
+          <%= online_pricing.price %>
+        </td>
+        <!-- Display online_pricing.price end -->
+
+        <!-- Display online_pricing.ppd start -->
+        <td>
+          <%= online_pricing.ppd %>
+        </td>
+        <!-- Display online_pricing.ppd end -->
+
+        <!-- Display online_pricing.hyperlink start -->
+        <td>
+          <%= online_pricing.hyperlink %>
+        </td>
+        <!-- Display online_pricing.hyperlink end -->
+
+        <!-- Display online_pricing.medication_id start -->
+        <td>
+          <%= online_pricing.medication_id %>
+        </td>
+        <!-- Display online_pricing.medication_id end -->
+
+        <!-- Display online_pricing.created_at start -->
+        <td>
+          <%= time_ago_in_words(online_pricing.created_at) %> ago
+        </td>
+        <!-- Display online_pricing.created_at end -->
+
+        <!-- Display online_pricing.updated_at start -->
+        <td>
+          <%= time_ago_in_words(online_pricing.updated_at) %> ago
+        </td>
+        <!-- Display online_pricing.updated_at end -->
+
+        <td>
+          <a href="/online_pricings/<%= online_pricing.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
